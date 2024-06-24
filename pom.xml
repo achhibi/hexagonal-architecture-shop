@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.3.1</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>amch.labs</groupId>
+	<artifactId>hexagonal-architecture-lab</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>hexagonal-architecture-lab</name>
+	<description>Demo hexagonal-architecture with Spring Boot</description>
+	<modules>
+		<module>application</module>
+		<module>infrastructure</module>
+	</modules>
+	<packaging>pom</packaging>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+	<plugins>
+		<!-- Make sure to use the latest compiler and surefire plugins
+             (their versions otherwise depends on the Maven version in use). -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+		</plugin>
+		<plugin>
+			<groupId>com.diffplug.spotless</groupId>
+			<artifactId>spotless-maven-plugin</artifactId>
+			<version>2.43.0</version>
+			<configuration>
+				<java>
+					<googleJavaFormat>
+						<!-- Latest version can be found here: https://github.com/google/google-java-format/releases -->
+						<version>1.22.0</version>
+						<style>GOOGLE</style>
+						<reflowLongStrings>false</reflowLongStrings>
+					</googleJavaFormat>
+					<lineEndings>UNIX</lineEndings>
+				</java>
+			</configuration>
+			<executions>
+				<execution>
+					<goals>
+						<goal>check</goal>
+					</goals>
+					<phase>validate</phase>
+				</execution>
+			</executions>
+		</plugin>
+
+
+
+	</plugins>
+	</build>
+</project>
