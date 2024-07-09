@@ -1,6 +1,7 @@
 package amch.labs.application.model.cart;
 
 import amch.labs.application.model.exception.NotEnoughItemsInStockException;
+import amch.labs.application.model.money.Money;
 import amch.labs.application.model.product.Product;
 
 public class CartLineItem {
@@ -34,5 +35,9 @@ public class CartLineItem {
 
   public int quantity() {
     return quantity;
+  }
+
+  public Money subTotal() {
+    return product.price().multiply(quantity);
   }
 }

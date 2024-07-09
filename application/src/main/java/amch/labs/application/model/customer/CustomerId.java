@@ -1,3 +1,3 @@
 package amch.labs.application.model.customer;
 
-public record CustomerId(Long value) {}
+public record CustomerId(Integer value) {}
